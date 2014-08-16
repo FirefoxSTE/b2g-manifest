@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<manifest>
+
+  <!-- Copied from nexus-5 manifest -->
+  <include name="base-kk-aosp.xml"/>
+
+  <remote fetch="https://github.com/" name="gh"/>
+  <remote fetch="git://git.kernel.org/pub/scm/" name="kernel" />
+  <remote fetch="https://code.google.com/p/" name="googlecode" />
+  <default remote="caf" revision="refs/tags/android-4.4.2_r1" sync-j="4"/>
+
+  <!-- repositories to remove -->
+  <remove-project name="platform_build" />
+  <remove-project name="platform/bionic" />
+  <remove-project name="platform/bootable/recovery" />
+  <remove-project name="platform/external/bluetooth/bluedroid" />
+  <remove-project name="platform_frameworks_av" />
+  <remove-project name="platform/frameworks/native" />
+  <remove-project name="platform/hardware/libhardware" />
+  <remove-project name="platform/hardware/libhardware_legacy" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.7" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.7" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/host/headers" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.7" />
+  <remove-project name="platform/prebuilts/python/darwin-x86/2.7.5" />
+  <remove-project name="platform_system_core" />
+  <remove-project name="platform/system/netd" />
+  <remove-project name="platform/system/vold" />
+
+  <!-- FirefoxSTE patched repo -->
+  <project name="FirefoxSTE/android_build" path="build" remote="gh" revision="master">
+    <copyfile dest="Makefile" src="core/root.mk"/>
+  </project>
+  <project name="FirefoxSTE/android_bionic" path="bionic" remote="gh" revision="master" />
+  <project name="FirefoxSTE/android_frameworks_av" path="frameworks/av" remote="gh" revision="master" />
+  <project name="FirefoxSTE/android_frameworks_native" path="frameworks/native" remote="gh" revision="master" />
+  <project name="FirefoxSTE/android_hardware_libhardware" path="hardware/libhardware" remote="gh" revision="master" />
+  <project name="FirefoxSTE/android_hardware_libhardware_legacy" path="hardware/libhardware_legacy" remote="gh" revision="master" />
+  <project name="FirefoxSTE/android_system_core" path="system/core" remote="gh" revision="master" />
+  <project name="FirefoxSTE/android_system_netd" path="system/netd" remote="gh" revision="master" />
+  <project name="FirefoxSTE/android_system_vold" path="system/vold" remote="gh" revision="master" />
+
+  <!-- Bluetooth repo -->
+  <project name="FirefoxSTE/android_external_bluetooth_bluez" path="external/bluetooth/bluez" remote="gh" revision="5.22" />
+  <project name="bluetooth/sbc" path="external/bluetooth/sbc" remote="kernel" revision="master" groups="pdk" />
+  <project name="aosp-bluez.glib" path="external/bluetooth/glib" remote="googlecode" revision="master" groups="pdk" />
+
+  <!-- Novathor specific things -->
+  <project path="kernel/sony/u8500" name="FirefoxSTE/android_kernel_sony_u8500" remote="gh" revision="master" />
+  <project path="device/sony/kumquat" name="FirefoxSTE/android_device_sony_kumquat" remote="gh" revision="master" />
+  <project path="device/sony/montblanc-common" name="FirefoxSTE/android_device_sony_montblanc-common" remote="gh" revision="master" />
+  <project name="Agontuk/android_bootable_recovery" path="bootable/recovery" remote="gh" revision="master" />
+  <project name="FirefoxSTE/android_hardware_ste-sony" path="hardware/ste-sony" remote="gh" revision="master"/>
+  <project name="FirefoxSTE/android_vendor_sony" path="vendor/sony" remote="gh" revision="master" />
+
+  <!-- Other repos -->
+  <project name="CyanogenMod/android_external_wpa_supplicant_8_ti" path="external/wpa_supplicant_8_ti" remote="gh" revision="cm-11.0" />
+
+</manifest>
