@@ -56,5 +56,6 @@
 
   <!-- Other repos -->
   <project name="CyanogenMod/android_external_wpa_supplicant_8_ti" path="external/wpa_supplicant_8_ti" remote="gh" revision="cm-11.0" />
+  <project name="CyanogenMod/android_external_busybox" path="external/busybox" remote="gh" revision="cm-11.0" />
 
 </manifest>
